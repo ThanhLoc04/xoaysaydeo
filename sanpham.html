@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Xoài Sấy Dẻo</title>
+    <style>
+        /* Định dạng chung */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #eeeeee;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #ffcc11;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #ff9900;
+            padding: 10px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            flex: 1;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-item h2 {
+            color: #ff6600;
+            font-size: 1.5em;
+        }
+
+        footer {
+            background-color: #ff9900;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 350px;
+            /* Decreased width */
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            color: #ff6600;
+            font-size: 1.5em;
+            /* Adjusted font size */
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .close-btn:hover {
+            background-color: #e68a00;
+        }
+
+        .size-selector {
+            margin: 20px 0;
+            font-size: 1.1em;
+            /* Slightly smaller font */
+        }
+
+        .size-selector select {
+            padding: 8px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .price {
+            margin-top: 20px;
+            font-size: 1.2em;
+            /* Reduced size */
+            color: #ff6600;
+        }
+
+        /* Payment Button Styles */
+        .pay-btn {
+            background-color: #28a745;
+            /* Green color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-left: 10px;
+            /* Space between the buttons */
+            transition: background-color 0.3s;
+        }
+
+        .pay-btn:hover {
+            background-color: #218838;
+            /* Darker green when hovered */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Danh Sách Sản Phẩm
+    </header>
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="sanpham.html">Sản phẩm</a>
+        <a href="https://www.facebook.com/profile.php?id=61569159662480" target="_blank">Liên hệ</a>
+    </nav>
+    <main>
+        <h1>Các sản phẩm đặc biệt</h1>
+        <div class="product-list">
+            <div class="product-item" data-title="Xoài Sấy Dẻo Muối Ớt"
+                data-description="Hương vị độc đáo với muối ớt cay nồng." data-price="45000">
+                <img src="https://leminhfood.com.vn/wp-content/uploads/2022/09/298197853_444525574393771_5592398975612822882_n.jpg"
+                    alt="Xoài Sấy Dẻo Muối Ớt">
+                <h2>Xoài Sấy Dẻo Muối Ớt</h2>
+            </div>
+            <div class="product-item" data-title="Xoài Sấy Dẻo Ít Đường"
+                data-description="Giữ nguyên hương vị tự nhiên, ít đường." data-price="70000">
+                <img src="https://product.hstatic.net/1000323506/product/dried-mango-background-candied-slices-mango-fruit-close-up_4218f009ceed4c66aee4f5c83e5350b1_master.jpg"
+                    alt="Xoài Sấy Dẻo Ít Đường">
+                <h2>Xoài Sấy Dẻo Ít Đường</h2>
+            </div>
+            <div class="product-item" data-title="Xoài Sấy Dẻo Không Đường"
+                data-description="Thích hợp cho người ăn kiêng." data-price="100000">
+                <img src="https://nutgarden.vn/wp-content/uploads/2021/02/xoai-say-khong-duong-4-min.jpg"
+                    alt="Xoài Sấy Dẻo Không Đường">
+                <h2>Xoài Sấy Dẻo Không Đường</h2>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 - Xoài Sấy Dẻo.
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Tiêu đề sản phẩm</h2>
+            <p id="modal-description">Mô tả sản phẩm</p>
+
+            <!-- Dropdown chọn khối lượng -->
+            <div class="size-selector">
+                <label for="size-select">Chọn khối lượng:</label>
+                <select id="size-select">
+                    <option value="200g">200g</option>
+                    <option value="350g">350g</option>
+                    <option value="500g">500g</option>
+                </select>
+            </div>
+
+            <!-- Giá sản phẩm -->
+            <p id="modal-price" class="price">Giá: 0 VNĐ</p>
+
+            <!-- Action Buttons -->
+            <button class="close-btn" onclick="closeModal()">Đóng</button>
+            <button class="pay-btn" onclick="generatePayment()">Thanh toán</button>
+        </div>
+    </div>
+
+    <script>
+        // Lấy tất cả các sản phẩm
+        const products = document.querySelectorAll('.product-item');
+        const modal = document.getElementById('product-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalPrice = document.getElementById('modal-price');
+        const sizeSelect = document.getElementById('size-select');
+
+        // Hàm cập nhật giá khi chọn khối lượng
+        let basePrice = 0; // Khởi tạo giá cơ bản
+
+        const updatePrice = () => {
+            const selectedSize = sizeSelect.value;
+            let price = basePrice;
+
+            if (selectedSize === '200g') {
+                price = basePrice; // 200g giữ nguyên giá cơ bản
+            } else if (selectedSize === '350g') {
+                price = basePrice + 50000; // 350g giá cao hơn 50.000 VNĐ
+            } else if (selectedSize === '500g') {
+                price = basePrice + 150000; // 500g giá cao hơn 150.000 VNĐ
+            }
+
+            modalPrice.textContent = `Giá: ${price.toLocaleString()} VNĐ`;
+        };
+
+        // Hàm hiển thị thông tin thanh toán
+        const generatePayment = () => {
+            const selectedSize = sizeSelect.value;
+            const selectedProduct = modalTitle.textContent;
+            const amount = modalPrice.textContent.replace("Giá: ", "").replace(" VNĐ", "").replace(",", "");
+
+            // Mô phỏng tạo mã QR hoặc thông tin chuyển khoản
+            alert(`Thanh toán cho sản phẩm \n${selectedProduct} ${selectedSize} \nSố tiền: ${amount} VNĐ\nVui lòng liên hệ để thanh toán đơn hàng này. Xin cám ơn!`);
+        };
+
+        // Gán sự kiện click vào mỗi sản phẩm
+        products.forEach(product => {
+            product.addEventListener('click', () => {
+                modalTitle.textContent = product.dataset.title;
+                modalDescription.textContent = product.dataset.description;
+
+                // Lấy giá cơ bản từ data-price của sản phẩm
+                basePrice = parseInt(product.dataset.price.replace(/[^\d]/g, '')); // Cập nhật giá cơ bản
+                updatePrice(); // Cập nhật giá ban đầu
+
+                modal.style.display = 'flex'; // Hiển thị modal
+            });
+        });
+
+        // Lắng nghe sự thay đổi trên dropdown khối lượng
+        sizeSelect.addEventListener('change', updatePrice);
+
+        // Hàm đóng modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>
