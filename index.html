@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xoài Sấy Dẻo - Sản phẩm tuyệt hảo</title>
+    <style>
+        /* Định dạng tổng thể cho trang */
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #eeeeee;
+            /* Màu nền sáng hơn */
+            box-sizing: border-box;
+        }
+
+        /* Định dạng cho phần header */
+        header {
+            background-color: #ffcc11;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Định dạng cho thanh điều hướng */
+        nav {
+            background-color: #ff9900;
+            padding: 10px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: #fff;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: underline;
+            font-size: 1.2em;
+            text-decoration-color: #fff;
+        }
+
+        /* Định dạng cho phần nội dung chính */
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+            flex: 1;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: whitesmoke;
+            /* Màu nền trắng như tờ giấy */
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Định dạng cho hình ảnh trong thông tin sản phẩm */
+        .product-info img {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .details {
+            max-width: 60%;
+            padding-left: 20px;
+        }
+
+        .details h2 {
+            color: #ff6600;
+            font-size: 2em;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 10px 0 0 20px;
+        }
+
+        /* Định dạng cho bảng thông tin sản phẩm */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Định dạng cho footer */
+        footer {
+            background-color: #ff9900;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Queries để tối ưu cho thiết bị di động */
+        @media (max-width: 768px) {
+            .product-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .details {
+                max-width: 100%;
+                padding-left: 0;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 5px 10px;
+            }
+
+            header {
+                font-size: 2em;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Xoài Sấy Dẻo - Đặc Sản Việt Nam
+    </header>
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="sanpham.html">Sản phẩm</a>
+        <a href="https://www.facebook.com/profile.php?id=61569159662480" target="_blank">Liên hệ</a>
+    </nav>
+    <hr>
+    <main>
+        <section>
+            <h1>Giới thiệu sản phẩm</h1>
+            <div class="product-info">
+                <img src="https://i.ibb.co/kKd20mn/6107250320624174287.jpg" alt="Xoài sấy dẻo">
+                <div class="details">
+                    <h2>Xoài Sấy Dẻo - Thơm Ngon Từng Miếng</h2>
+                    <p><i>Xoài sấy dẻo là một sản phẩm chất lượng cao, được làm từ những trái xoài chín mọng, sấy khô mà
+                            vẫn giữ được độ ngọt tự nhiên và hương vị thơm ngon đặc trưng. Sản phẩm không chỉ cung cấp
+                            nguồn
+                            vitamin C dồi dào mà còn là một món ăn vặt lành mạnh, dễ dàng mang theo mọi lúc mọi nơi.</i>
+                    </p>
+                    <h3>Đặc điểm nổi bật:</h3>
+                    <ul>
+                        <li>100% xoài tươi, không chất bảo quản</li>
+                        <li>Giữ nguyên hương vị tự nhiên</li>
+                        <li>Giàu vitamin và chất xơ</li>
+                        <li>Phù hợp với mọi lứa tuổi</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Thông tin sản phẩm</h1>
+            <table>
+                <tr>
+                    <th>Thành phần</th>
+                    <td>Xoài chín 100%, đường, muối</td>
+                </tr>
+                <tr>
+                    <th>Khối lượng</th>
+                    <td>200g, 350g, 500g</td>
+                </tr>
+                <tr>
+                    <th>Hạn sử dụng</th>
+                    <td>3 tháng kể từ ngày sản xuất</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 - Xoài Sấy Dẻo.
+    </footer>
+
+</body>
+
+</html>
